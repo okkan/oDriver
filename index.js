@@ -5,6 +5,8 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const config = require("./configs/index");
 
 const app = express();
 
@@ -15,7 +17,19 @@ app.use(bodyParser.json());
 
 require("./configs/routes/index")(app);
 
-app.listen(port, () => {
-    console.log("Api listening at", port.toString(), "port");
-});
+connectToDb()
+    .on('error', console.log)
+    .on('disconnected', connectToDb)
+    .once('open', listen);
+
+function connectToDb() {
+    let options = {server: {socketOptions: {keepAlive: 1}}};
+    return mongoose.connect(config.db, options).connection;
+}
+
+function listen() {
+    app.listen(port, () => {
+        console.log("Api listening at", port.toString(), "port");
+    });
+}
 

@@ -7,10 +7,8 @@ const cDrivers = require("../../controllers/cDrivers");
 
 module.exports = (app, router)=>{
   router.route("/").post(
-      (req, res) => {
-          res.json({message: req.body.deneme, from : "routes.js"});
-      }
-  )
+      cDrivers.create
+    );
 
     app.use("/api", router);
 };
