@@ -9,10 +9,10 @@ const schemaDriver = new Schema(
     {
         name : String,
         surname : String,
-        jobCount : Number,
+        jobCount : {type : Number, default : 0},
         currLoc : {
-            latitude : String,
-            longitude : String
+            latitude : {type : Number, default : 0},
+            longitude : {type : Number, default : 0},
         },
         creationDate : {type : Date, default : Date.now()},
     }
