@@ -11,8 +11,8 @@ const schemaDriver = new Schema(
         surname : String,
         jobCount : {type : Number, default : 0},
         currLoc : {
-            latitude : {type : Number, default : 0},
-            longitude : {type : Number, default : 0},
+            type: [Number],  // [<longitude>, <latitude>]
+            index: '2dsphere'
         },
         creationDate : {type : Date, default : Date.now()},
     }
