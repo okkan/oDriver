@@ -63,3 +63,16 @@ exports.find = (req, res)=>{
     });
 
 };
+
+exports.delete = (req, res)=>{
+
+    mDriver.findById(req.params._id,(err, driver)=>{
+        if(err)
+            res.send(err);
+
+        driver.remove(()=>{
+            res.json({message : "Deleted", _id:req.params._id});
+        });
+    });
+
+};

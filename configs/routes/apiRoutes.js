@@ -19,6 +19,9 @@ module.exports = (app, router) => {
         )
         .put(
             cDrivers.update
+        )
+        .delete(
+            cDrivers.delete
         );
 
     app.use("/api", router);

@@ -29,7 +29,7 @@ function connectToDb() {
 
 function listen() {
     app.listen(port, () => {
-        console.log("Api listening at", port.toString(), "port");
+        console.log("REST API listening at", port.toString(), "port");
     });
 }
 
