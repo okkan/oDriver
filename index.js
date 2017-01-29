@@ -18,11 +18,17 @@ app.use(bodyParser.json());
 require("./configs/routes/index")(app);
 
 
+/**
+ * connecting to mongoDB with mongoose
+ */
 let startServer = () => {
     let options = {server: {socketOptions: {keepAlive: 1}}};
     return mongoose.connect(config.db, options).connection;
 };
 
+/**
+ * inits express
+ */
 let listen = () => {
     app.listen(port, () => {
         console.log("REST API listening at", port.toString(), "port");

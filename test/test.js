@@ -14,6 +14,12 @@ const server = require("../index");
 let url = "http://localhost:8088";
 let test_id = "";
 
+
+/**
+ * Generates random geolocation around 1000 meters limit.
+ *
+ * @returns {Array}
+ */
 let generate_Location = () => {
     let r = 1000 / 111300 // = 1000 meters
         , y0 = -45.79888

@@ -1,5 +1,6 @@
 /**
  * Created by Captain on 27.01.2017.
+ * Driver schema file for Mongoose
  */
 'use strict';
 const mongoose = require("mongoose");

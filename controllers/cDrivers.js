@@ -1,9 +1,14 @@
 /**
  * Created by Captain on 27.01.2017.
+ * Driver Controller File - 'Controller' doesn't mean MVC's controller
  */
 "use strict";
 const mDriver = require("../models/mDrivers");
 
+/**
+ * @param req - request
+ * @param res - response
+ */
 exports.create = (req, res) => {
 
     let driver = new mDriver();
@@ -19,6 +24,10 @@ exports.create = (req, res) => {
 
 };
 
+/**
+ * @param req - request
+ * @param res - response
+ */
 exports.update = (req, res) => {
 
     mDriver.findById(req.params._id, (err, driver) => {
@@ -40,7 +49,10 @@ exports.update = (req, res) => {
 
 };
 
-
+/**
+ * @param req - request
+ * @param res - response
+ */
 exports.all = (req, res) => {
 
     mDriver.find((err, drivers) => {
@@ -52,6 +64,10 @@ exports.all = (req, res) => {
 
 };
 
+/**
+ * @param req - request
+ * @param res - response
+ */
 exports.find = (req, res) => {
 
     mDriver.findById(req.params._id, (err, driver) => {
@@ -63,6 +79,10 @@ exports.find = (req, res) => {
 
 };
 
+/**
+ * @param req - request
+ * @param res - response
+ */
 exports.delete = (req, res) => {
 
     mDriver.findById(req.params._id, (err, driver) => {
@@ -76,8 +96,13 @@ exports.delete = (req, res) => {
 
 };
 
+/**
+ * @param req - request
+ * @param res - response
+ */
 exports.closestThree = (req, res) => {
 
+    //using mongoose geoNear to find closest 3 driver.
     mDriver.geoNear(
         {type: "Point", coordinates: req.body.location},
         {
