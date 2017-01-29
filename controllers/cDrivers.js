@@ -82,7 +82,7 @@ exports.closestThree = (req, res) => {
         {type: "Point", coordinates: req.body.location},
         {
             spherical: true,
-            maxDistance: 100,
+            maxDistance: 1000, //1000 meters
             limit : 3
         }
     ).then((doc)=>{
