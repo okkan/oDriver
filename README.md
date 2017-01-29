@@ -1,14 +1,14 @@
 READ ME !
 =====================
 
-This is just a sample about expressjs, mongoose used REST API and its unit test.
+This is just a sample project using expressjs, mongoose to develop a REST API and its unit test.
 
 To install : 
 ```
 npm install
 ```
 
-/configs/env/dev.js and /configs/env/prod.js need to be configured before run it.
+/configs/env/dev.js and /configs/env/prod.js need to be configured before running it.
 
 To unit test : 
 ```
@@ -67,7 +67,7 @@ node index.js
 ```
  
 #####Get Method :
- Serves all driver list as JSON Array.
+ Serves all drivers list as JSON Array.
  
   Sample response : 
 ```json
