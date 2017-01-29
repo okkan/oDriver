@@ -8,6 +8,8 @@ const request = require('supertest');
 const mongoose = require('mongoose');
 const winston = require('winston');
 const config = require('../configs/index');
+const server = require("../index");
+
 
 let url = "http://localhost:8088";
 let test_id = "";

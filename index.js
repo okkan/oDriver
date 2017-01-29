@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 require("./configs/routes/index")(app);
 
 
-let connectToDb = () => {
+let startServer = () => {
     let options = {server: {socketOptions: {keepAlive: 1}}};
     return mongoose.connect(config.db, options).connection;
 };
@@ -29,11 +29,7 @@ let listen = () => {
     });
 };
 
-connectToDb()
+startServer()
     .on('error', console.log)
-    .on('disconnected', connectToDb)
+    .on('disconnected', startServer)
     .once('open', listen);
-
-
-
-
