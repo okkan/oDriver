@@ -3,6 +3,7 @@
  */
 "use strict";
 
+//development mode config
 module.exports = {
     db: 'mongodb://localhost/noobjs_dev'
 };

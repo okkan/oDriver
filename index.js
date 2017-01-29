@@ -27,7 +27,7 @@ let listen = () => {
     app.listen(port, () => {
         console.log("REST API listening at", port.toString(), "port");
     });
-}
+};
 
 connectToDb()
     .on('error', console.log)
